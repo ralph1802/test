@@ -30,9 +30,9 @@ h2 {
   font-weight: bold;
   cursor: pointer;
   display: flex;
-  justify-content: center; /* Centra el texto */
-  align-items: center; /* Alinea el texto verticalmente */
-  position: relative; /* Permite usar 'absolute' para el icono */
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .login-btn img {
