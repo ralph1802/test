@@ -11,7 +11,7 @@ import { UserService } from '../../core/user-service.service';
   imports: [
     FormInputComponent,
     SubmitButtonRegisterComponent,
-    ReactiveFormsModule, // Asegúrate de incluir ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
@@ -20,7 +20,7 @@ export class RegisterComponent {
   registerForm: FormGroup;
 
   constructor(private userService: UserService, private router: Router) {
-    // Inicializa el formulario
+
     this.registerForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
