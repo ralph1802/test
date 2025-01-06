@@ -1,48 +1,50 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { NameInputRegisterComponent } from './components/name-input-register/name-input-register.component';
-import { EmailInputRegisterComponent } from './components/email-input-register/email-input-register.component';
-import { PasswordInputRegisterComponent } from './components/password-input-register/password-input-register.component';
-import { ConfirmPasswordInputRegisterComponent } from './components/confirm-password-input-register/confirm-password-input-register.component';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormInputComponent } from './components/form-input/form-input.component';
 import { SubmitButtonRegisterComponent } from './components/submit-button-register/submit-button-register.component';
-import { UserService } from '../../core/user-service.service'; // Usando el nombre correcto del servicio
+import { UserService } from '../../core/user-service.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
   imports: [
-    NameInputRegisterComponent,
-    EmailInputRegisterComponent,
-    PasswordInputRegisterComponent,
-    ConfirmPasswordInputRegisterComponent,
+    FormInputComponent,
     SubmitButtonRegisterComponent,
-    FormsModule,
+    ReactiveFormsModule, // Asegúrate de incluir ReactiveFormsModule
   ],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  name: string = '';
-  email: string = '';
-  password: string = '';
-  confirmPassword: string = '';
+  registerForm: FormGroup;
 
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {
+    // Inicializa el formulario
+    this.registerForm = new FormGroup({
+      name: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required]),
+      confirmPassword: new FormControl('', [Validators.required]),
+    });
+  }
+
+  get email() {
+    return this.registerForm.get('email');
+  }
 
   onSubmit() {
-    if (!this.name || !this.email || !this.password || !this.confirmPassword) {
-      alert('Por favor, completa todos los campos.');
+    if (this.registerForm.invalid) {
+      alert('Por favor, completa todos los campos correctamente.');
       return;
     }
 
-    if (this.password !== this.confirmPassword) {
+    if (this.registerForm.value.password !== this.registerForm.value.confirmPassword) {
       alert('Las contraseñas no coinciden.');
       return;
     }
 
-    this.userService.addUser(this.name, this.email);
-
+    this.userService.addUser(this.registerForm.value.name, this.registerForm.value.email);
     this.router.navigate(['/home']);
   }
 }
