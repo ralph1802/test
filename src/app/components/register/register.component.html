@@ -1,10 +1,10 @@
 <div class="form-container">
   <form (ngSubmit)="onSubmit()">
     <h2 class="title-register">Registrarse</h2>
-    <app-name-input-register></app-name-input-register>
-    <app-email-input-register></app-email-input-register>
-    <app-password-input-register></app-password-input-register>
-    <app-confirm-password-input-register></app-confirm-password-input-register>
-    <app-submit-button-register></app-submit-button-register>
+    <app-name-input-register [(value)]="name"></app-name-input-register>
+    <app-email-input-register [(value)]="email"></app-email-input-register>
+    <app-password-input-register [(value)]="password"></app-password-input-register>
+    <app-confirm-password-input-register [(value)]="confirmPassword"></app-confirm-password-input-register>
+    <app-submit-button-register (submitForm)="onSubmit()"></app-submit-button-register>
   </form>
 </div>

@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-name-input-register',
@@ -7,10 +7,12 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./name-input-register.component.css'],
 })
 export class NameInputRegisterComponent {
+  @Input() value: string = '';
   @Output() valueChange = new EventEmitter<string>();
 
-  onInput(event: Event) {
+  onInputChange(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.valueChange.emit(input.value);
+    this.value = input.value;
+    this.valueChange.emit(this.value);
   }
 }
