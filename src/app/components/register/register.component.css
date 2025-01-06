@@ -13,38 +13,8 @@ form {
   height: 100%;
 }
 
-h2 {
+.title-register {
   font-size: 32px;
   font-weight: 400;
   color: #686868;
 }
-
-input {
-  width: 100%;
-  padding: 10px 0;
-  border: none;
-  border-bottom: 2px solid #686868;
-  color: #686868;
-  font-size: 16px;
-  outline: none;
-}
-
-.submit-btn {
-  width: 30%;
-  padding: 10px;
-  background: #ff6600;
-  color: #fff;
-  border: none;
-  font-size: 16px;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background: #e55b00;
-}
-
-.submit-btn:focus {
-  background: #e55c00c2;
-}
-
