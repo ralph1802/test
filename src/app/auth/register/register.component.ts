@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
-import { FormInputComponent } from './components/form-input/form-input.component';
-import { SubmitButtonRegisterComponent } from './components/submit-button-register/submit-button-register.component';
-import { UserService } from '../../core/user-service.service';
+import { FormInputComponent } from '../../shared/form-input/form-input.component';
+import { SubmitButtonRegisterComponent } from '../../shared/submit-button-register/submit-button-register.component';
+import { UserService } from '../services/user-service.service';
 
 @Component({
   selector: 'app-register',
@@ -19,7 +19,7 @@ import { UserService } from '../../core/user-service.service';
 export class RegisterComponent {
   registerForm: FormGroup;
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private UserService: UserService, private router: Router) {
 
     this.registerForm = new FormGroup({
       name: new FormControl('', [Validators.required]),
@@ -44,7 +44,7 @@ export class RegisterComponent {
       return;
     }
 
-    this.userService.addUser(this.registerForm.value.name, this.registerForm.value.email);
+    this.UserService.addUser(this.registerForm.value.name, this.registerForm.value.email);
     this.router.navigate(['/home']);
   }
 }
