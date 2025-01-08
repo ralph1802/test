@@ -6,7 +6,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './login-button.component.html',
-  styleUrls: ['./login-button.component.css']
+  styleUrls: ['./login-button.component.scss']
 })
 export class LoginButtonComponent {
   @Input() type!: string;

@@ -1,0 +1,46 @@
+@import '../../../styles/variables';
+
+.login-btn {
+  width: $button-width;
+  padding: $button-padding;
+  border: none;
+  font-size: $font-size-default;
+  font-weight: $font-weight-bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: $color-white;
+}
+
+.login-btn img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 20px;
+}
+
+.facebook {
+  background-color: $color-facebook;
+}
+
+.facebook:hover {
+  background-color: $color-facebook-hover;
+}
+
+.twitter {
+  background-color: $color-twitter;
+}
+
+.twitter:hover {
+  background-color: $color-twitter-hover;
+}
+
+.email {
+  background-color: $color-email;
+}
+
+.email:hover {
+  background-color: $color-email-hover;
+}

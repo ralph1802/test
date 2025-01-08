@@ -8,7 +8,7 @@ import { RegisterComponent } from './register/register.component';
   standalone: true,
   imports: [LoginComponent, RegisterComponent],
   templateUrl: './auth.component.html',
-  styleUrl: './auth.component.css'
+  styleUrl: './auth.component.scss'
 })
 export class AuthComponent {
 

@@ -1,0 +1,25 @@
+@import '../../../styles/variables';
+
+.container {
+  width: $container-width;
+  height: $container-height;
+  padding: $padding-default;
+  box-sizing: border-box;
+  background: linear-gradient(to bottom, $color-primary, $color-secondary);
+}
+
+.login-container {
+  height: 90%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.login-title {
+  font-size: $font-size-large;
+  font-weight: $font-weight-normal;
+  color: $color-white;
+}

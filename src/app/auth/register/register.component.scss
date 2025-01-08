@@ -1,0 +1,22 @@
+@import '../../../styles/variables';
+
+.form-container {
+  width: $container-width;
+  height: $container-height;
+  padding: $padding-default;
+  box-sizing: border-box;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: $container-width;
+  height: $container-height;
+}
+
+.title-register {
+  font-size: $font-size-large;
+  font-weight: $font-weight-normal;
+  color: $color-dark-gray;
+}
