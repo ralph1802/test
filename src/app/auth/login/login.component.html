@@ -1,8 +1,12 @@
 <div class="container">
-  <h2 class="login-tittle">Iniciar Sesión</h2>
+  <h2 class="login-title">Iniciar Sesión</h2>
   <div class="login-container">
-    <app-acces-facebook></app-acces-facebook>
-    <app-acces-twitter></app-acces-twitter>
-    <app-acces-email></app-acces-email>
+    <app-login-button
+      *ngFor="let option of accessOptions"
+      [type]="option.type"
+      [label]="option.label"
+      [icon]="option.icon"
+      (action)="option.action()"
+    ></app-login-button>
   </div>
 </div>

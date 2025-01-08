@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccesTwitterComponent } from './acces-twitter.component';
+import { DashboardComponent } from './dashboard.component';
 
-describe('AccesTwitterComponent', () => {
-  let component: AccesTwitterComponent;
-  let fixture: ComponentFixture<AccesTwitterComponent>;
+describe('DashboardComponent', () => {
+  let component: DashboardComponent;
+  let fixture: ComponentFixture<DashboardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AccesTwitterComponent]
+      imports: [DashboardComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AccesTwitterComponent);
+    fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

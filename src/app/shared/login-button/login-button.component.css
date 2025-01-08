@@ -19,10 +19,26 @@
   left: 20px;
 }
 
+.facebook {
+  background-color: #3b5998;
+}
+
+.facebook:hover {
+  background-color: #2c4b86;
+}
+
 .twitter {
   background-color: #1da1f2;
 }
 
 .twitter:hover {
-  background-color: #1a91c2;
+  background-color: #1991d0;
+}
+
+.email {
+  background-color: #00D5CF;
+}
+
+.email:hover {
+  background-color: #00d5cec9;
 }

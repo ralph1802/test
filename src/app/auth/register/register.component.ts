@@ -45,6 +45,6 @@ export class RegisterComponent {
     }
 
     this.UserService.addUser(this.registerForm.value.name, this.registerForm.value.email);
-    this.router.navigate(['/home']);
+    this.router.navigate(['/dashboard']);
   }
 }
