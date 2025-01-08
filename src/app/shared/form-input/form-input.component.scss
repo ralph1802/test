@@ -1,0 +1,11 @@
+@import '../../../styles/variables';
+
+input {
+  width: $container-width;
+  padding: $padding-small 0;
+  border: none;
+  border-bottom: $input-border-bottom;
+  color: $color-dark-gray;
+  font-size: $font-size-default;
+  outline: none;
+}
