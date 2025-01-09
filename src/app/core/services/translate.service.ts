@@ -1,34 +1,50 @@
 import { Injectable } from '@angular/core';
-@Injectable({providedIn: 'root'})
 
+@Injectable({ providedIn: 'root' })
 export class TranslateService {
-    lang:string;
+  private defaultLang = 'es'; // Idioma predeterminado
+  public lang: string; // Idioma actual
 
-    constructor() {
-        this.lang =  localStorage.getItem('lang') || 'es';
-        const lang = localStorage.getItem('lang');
+  constructor() {
+    // Verifica si localStorage está disponible antes de usarlo
+    if (this.isLocalStorageAvailable()) {
+      this.lang = localStorage.getItem('lang') || this.defaultLang;
 
-        if(!lang) {
-            localStorage.setItem('lang','es');
-        }
+      if (!localStorage.getItem('lang')) {
+        localStorage.setItem('lang', this.defaultLang);
+      }
+    } else {
+      this.lang = this.defaultLang; // Usa idioma predeterminado si localStorage no está disponible
     }
+  }
 
-    get GetLang(): string { return localStorage.getItem('lang') === 'es' ? 'es' : 'en' }
+  get GetLang(): string {
+    return this.lang;
+  }
 
+  changeLang(): void {
+    this.lang = this.lang === 'es' ? 'en' : 'es';
+    this.setLang(this.lang);
+  }
 
-    changeLang() {
-        const currentLang = localStorage.getItem('lang');
-        let lang = currentLang === 'es' ? 'en' : 'es';
-
-        localStorage.setItem('lang', lang);
-        this.lang = lang;
+  toggleLang(lang: string): void {
+    if (lang === 'es' || lang === 'en') {
+      this.setLang(lang);
     }
+  }
 
-
-    toggleLang(lang: string) {
-        if (lang === 'es' || lang === 'en') {
-          localStorage.setItem('lang', lang);
-        }
+  private setLang(lang: string): void {
+    this.lang = lang;
+    if (this.isLocalStorageAvailable()) {
+      localStorage.setItem('lang', lang);
     }
+  }
 
+  private isLocalStorageAvailable(): boolean {
+    try {
+      return typeof localStorage !== 'undefined';
+    } catch {
+      return false;
+    }
+  }
 }
