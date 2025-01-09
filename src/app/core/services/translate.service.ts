@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
 export class TranslateService {
-  private defaultLang = 'es'; // Idioma predeterminado
-  public lang: string; // Idioma actual
+  private defaultLang = 'es';
+  public lang: string;
 
   constructor() {
-    // Verifica si localStorage está disponible antes de usarlo
+
     if (this.isLocalStorageAvailable()) {
       this.lang = localStorage.getItem('lang') || this.defaultLang;
 
@@ -14,7 +14,7 @@ export class TranslateService {
         localStorage.setItem('lang', this.defaultLang);
       }
     } else {
-      this.lang = this.defaultLang; // Usa idioma predeterminado si localStorage no está disponible
+      this.lang = this.defaultLang;
     }
   }
 
