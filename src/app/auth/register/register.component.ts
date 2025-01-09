@@ -4,6 +4,8 @@ import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angula
 import { FormInputComponent } from '../../shared/form-input/form-input.component';
 import { SubmitButtonRegisterComponent } from '../../shared/submit-button-register/submit-button-register.component';
 import { UserService } from '../services/user-service.service';
+import { TranslateService } from '../../core/services/translate.service';
+import { TranslatePipe } from '../../shared/pipes/translate.pipe';
 
 @Component({
   selector: 'app-register',
@@ -12,14 +14,17 @@ import { UserService } from '../services/user-service.service';
     FormInputComponent,
     SubmitButtonRegisterComponent,
     ReactiveFormsModule,
+    TranslatePipe,
   ],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent {
+  public translateService: TranslateService;
   registerForm: FormGroup;
 
-  constructor(private UserService: UserService, private router: Router) {
+  constructor(private UserService: UserService, private router: Router, translateService: TranslateService) {
+    this.translateService = translateService;
 
     this.registerForm = new FormGroup({
       name: new FormControl('', [Validators.required]),

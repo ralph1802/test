@@ -1,0 +1,17 @@
+{
+  "login": {
+    "title": "Login",
+    "facebook": "Log in with Facebook",
+    "twitter": "Log in with Twitter",
+    "email": "Log in with Email"
+  },
+
+  "register": {
+    "register-title": "Register",
+    "name-placeholder": "Full Name",
+    "email-placeholder": "Email Address",
+    "password-placeholder": "Password",
+    "confirm-password-placeholder": "Confirm Password",
+    "submit": "REGISTER"
+  }
+}

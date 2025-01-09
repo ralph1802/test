@@ -1,10 +1,10 @@
 <div class="container">
-  <h2 class="login-title">Iniciar Sesión</h2>
+  <h2 class="login-title">{{ 'login.title' | translate:translateService.lang }}</h2>
   <div class="login-container">
     <app-login-button
       *ngFor="let option of accessOptions"
       [type]="option.type"
-      [label]="option.label"
+      [label]="option.label | translate:translateService.lang"
       [icon]="option.icon"
       (action)="option.action()"
     ></app-login-button>

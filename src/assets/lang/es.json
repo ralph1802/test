@@ -1,0 +1,16 @@
+{
+  "login": {
+    "title": "Iniciar Sesión",
+    "facebook": "Acceder con Facebook",
+    "twitter": "Acceder con Twitter",
+    "email": "Acceder con Correo"
+  },
+  "register": {
+    "register-title": "Registrarse",
+    "name-placeholder": "Nombre completo",
+    "email-placeholder": "Correo electrónico",
+    "password-placeholder": "Contraseña",
+    "confirm-password-placeholder": "Confirmar contraseña",
+    "submit": "REGISTRARSE"
+  }
+}

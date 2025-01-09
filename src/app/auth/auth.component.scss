@@ -16,9 +16,16 @@
   height: 80%;
   box-shadow: $box-shadow;
   display: flex;
+  position: relative;
 }
 
 app-register,
 app-login {
   flex: 1;
+}
+
+app-language-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
