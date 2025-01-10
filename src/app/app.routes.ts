@@ -5,9 +5,9 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 export const routes: Routes = [
-  { path: '', component: AuthComponent },
+  { path: 'auth', component: AuthComponent },
   {path: 'dashboard', component: DashboardComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  { path: '**', redirectTo: 'auth', pathMatch: 'full' },
 ];
 
 @NgModule({
